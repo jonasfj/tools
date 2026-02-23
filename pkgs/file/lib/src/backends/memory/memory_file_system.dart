@@ -31,7 +31,9 @@ void _defaultOpHandle(String context, FileSystemOp operation) {}
 /// This implementation of the [FileSystem] interface does not directly use
 /// any `dart:io` APIs; it merely uses the library's enum values and interfaces.
 /// As such, it is suitable for use in the browser.
-abstract class MemoryFileSystem implements StyleableFileSystem {
+abstract base class MemoryFileSystem extends StyleableFileSystem {
+  MemoryFileSystem._();
+
   /// Creates a new `MemoryFileSystem`.
   ///
   /// The file system will be empty, and the current directory will be the
@@ -76,13 +78,14 @@ abstract class MemoryFileSystem implements StyleableFileSystem {
 }
 
 /// Internal implementation of [MemoryFileSystem].
-class _MemoryFileSystem extends FileSystem
-    implements MemoryFileSystem, NodeBasedFileSystem {
+final class _MemoryFileSystem extends MemoryFileSystem
+    with NodeBasedFileSystem {
   _MemoryFileSystem({
     this.style = FileSystemStyle.posix,
     required this.clock,
     this.opHandle = _defaultOpHandle,
-  }) : _context = style.contextFor(style.root) {
+  })  : _context = style.contextFor(style.root),
+        super._() {
     _root = RootNode(this);
   }
 

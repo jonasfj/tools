@@ -40,7 +40,7 @@ typedef SegmentVisitor = Node? Function(
 
 /// A [FileSystem] whose internal structure is made up of a tree of [Node]
 /// instances, rooted at a single node.
-abstract class NodeBasedFileSystem implements StyleableFileSystem {
+base mixin NodeBasedFileSystem on StyleableFileSystem {
   /// An optional handle to hook into common file system operations.
   void Function(String context, FileSystemOp operation) get opHandle;
 

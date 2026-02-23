@@ -9,7 +9,7 @@ import '../interface.dart';
 import '../io.dart' as io;
 
 /// A file system that forwards all methods and properties to a delegate.
-abstract class ForwardingFileSystem extends FileSystem {
+abstract base class ForwardingFileSystem extends FileSystem {
   /// Creates a new [ForwardingFileSystem] that forwards all methods and
   /// properties to the specified [delegate].
   ForwardingFileSystem(this.delegate);

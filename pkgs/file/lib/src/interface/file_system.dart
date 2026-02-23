@@ -2,6 +2,8 @@
 // for details. All rights reserved. Use of this source code is governed by a
 // BSD-style license that can be found in the LICENSE file.
 
+import 'dart:io' show IOOverrides;
+
 import 'package:meta/meta.dart';
 import 'package:path/path.dart' as p;
 
@@ -17,9 +19,9 @@ import 'link.dart';
 /// exposed by the `dart:io` library. Subclasses should document their level of
 /// dependence on the library (and the associated implications of using that
 /// implementation in the browser).
-abstract class FileSystem {
+abstract base class FileSystem extends IOOverrides {
   /// Creates a new `FileSystem`.
-  const FileSystem();
+  FileSystem();
 
   /// Returns a reference to a [Directory] at [path].
   ///

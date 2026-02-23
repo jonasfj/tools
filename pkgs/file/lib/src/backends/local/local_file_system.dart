@@ -14,9 +14,9 @@ import 'local_link.dart';
 ///
 /// Since this implementation of the [FileSystem] interface delegates to
 /// `dart:io`, is is not suitable for use in the browser.
-class LocalFileSystem extends FileSystem {
+final class LocalFileSystem extends FileSystem {
   /// Creates a new `LocalFileSystem`.
-  const LocalFileSystem();
+  LocalFileSystem();
 
   @override
   Directory directory(dynamic path) =>

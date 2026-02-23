@@ -43,7 +43,7 @@ void main() {
       setUp(() {
         tmp = io.Directory.systemTemp.createTempSync('file_test_');
         tmp = io.Directory(tmp.resolveSymbolicLinksSync());
-        fs = ChrootFileSystem(const LocalFileSystem(), tmp.path);
+        fs = ChrootFileSystem(LocalFileSystem(), tmp.path);
       });
 
       tearDown(() {

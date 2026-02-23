@@ -93,7 +93,7 @@ class _Windows extends FileSystemStyle {
 }
 
 /// A file system that supports different styles.
-abstract class StyleableFileSystem implements FileSystem {
+abstract base class StyleableFileSystem extends FileSystem {
   /// The style used by this file system.
   FileSystemStyle get style;
 }
